@@ -29,13 +29,13 @@ public class StudentRunner {
             input = scan.nextInt();
             scan.nextLine();
             if (input == 1) {
-                System.out.println("Enter new graduation year: ");
+                System.out.print("Enter new graduation year: ");
                 student1.setGradYear(scan.nextInt());
                 scan.nextLine();
             }
             if (input == 2) {
-                System.out.println("Enter test score: ");
-                student1.addTestScore(scan.nextInt());
+                System.out.print("Enter test score: ");
+                student1.addTestScore(scan.nextDouble());
                 scan.nextLine();
             }
             if (input == 3) {
@@ -45,9 +45,14 @@ public class StudentRunner {
                 System.out.println("The student's highest test score is " + student1.getHighestTestScore());
             }
             if (input == 5) {
-
+                System.out.println("ALL STUDENT INFO");
+                student1.printStudentInfo();
+            }
+            if ((input <= 0) || (input >= 7)) {
+                System.out.println("Invalid input! Try again!");
             }
         }
+        System.out.println("Have a nice day!");
         scan.close();
     }
 }
